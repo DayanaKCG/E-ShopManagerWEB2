@@ -1,0 +1,39 @@
+﻿@page
+@model E_ShopManagerWEB2.Pages.Productos.DeleteModel
+@{
+	ViewData["title"] = "Delete";
+}
+<h1>Delete</h1>
+<h3>¿Estas seguro que quieres eliminiar  esta</h3>
+<div>
+	<h4>Producto?</h4>
+	<hr />
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Producto.Nombre)
+
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Producto.Descripcion)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Producto.Precio)
+
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Producto.Stock)
+		</dd>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Producto.CategoriaId)
+		</dd>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Producto.ImagenUrl)
+		</dd>
+	</dl>
+	<form method="post">
+		<input type="hidden" asp-for="Producto.Id" />
+		<input type="submit" value="Delete" class="btn btn-danger" />
+		<a asp-page="./index" class"btn btn-prymary">Back to list</a>
+	</form>
+</div>

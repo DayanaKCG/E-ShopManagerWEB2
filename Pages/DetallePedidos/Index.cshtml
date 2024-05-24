@@ -1,0 +1,48 @@
+﻿@page
+@model E_ShopManagerWEB2.Pages.DetallePedidos.IndexModel
+@{
+	ViewData["Tittle"] = "Index DetallePedidos";
+}
+<h1>Index DetallePedidos</h1>
+<p>
+	<a asp-page="Create" class="btn btn-success">Nuevo Detalle</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.DetallePedidos[0].PedidoId)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DetallePedidos[0].Cantidad)
+			</th>
+
+			<th>
+				@Html.DisplayNameFor(model => model.DetallePedidos[0].Precio)
+			</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.DetallePedidos)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.PedidoId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Cantidad)
+				</td>
+
+				<td>
+					@Html.DisplayFor(modelItem => item.Precio)
+				</td>
+				<td>
+					<a a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+					<a a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+				</td>
+
+			</tr>
+		}
+	</tbody>
+</table>
